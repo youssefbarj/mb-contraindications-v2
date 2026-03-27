@@ -141,7 +141,7 @@ function ContraindicationsGrid() {
               src={item.image || "/placeholder.svg"}
               alt={item.title}
               fill
-              className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
+              className="object-contain transition-transform duration-300 ease-out group-hover:scale-110"
             />
 
             <div className="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/20 transition-all duration-300 ease-out" />
