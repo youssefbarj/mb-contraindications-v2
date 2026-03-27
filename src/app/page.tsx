@@ -144,7 +144,7 @@ function ContraindicationsGrid() {
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
             />
 
-            <div className="absolute inset-0 bg-red-600 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 ease-out" />
+            <div className="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/20 transition-all duration-300 ease-out" />
           </div>
 
           <div className="p-6">
@@ -158,10 +158,10 @@ function ContraindicationsGrid() {
             </h3>
           </div>
 
-          <div className="absolute inset-0 bg-red-600 bg-opacity-95 text-white p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out flex flex-col justify-center transform translate-y-2 group-hover:translate-y-0">
+          <div className="absolute inset-0 bg-red-600/95 text-white p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out flex flex-col justify-center transform translate-y-2 group-hover:translate-y-0">
             <div className="text-center">
               <div className="mb-4">
-                <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 transition-transform duration-200 group-hover:scale-110">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 transition-transform duration-200 group-hover:scale-110">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
@@ -173,7 +173,7 @@ function ContraindicationsGrid() {
                 </div>
                 <h4 className="text-lg font-bold mb-2">Why is this a contraindication?</h4>
               </div>
-              <p className="text-sm leading-relaxed text-white text-opacity-90">{item.description}</p>
+              <p className="text-sm leading-relaxed text-white/90">{item.description}</p>
             </div>
           </div>
         </div>
