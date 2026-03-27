@@ -6,71 +6,71 @@ import Image from "next/image"
 const contraindications = [
   {
     id: 1,
-    title: "RECENT SCARS",
+    title: "CICATRICES RÉCENTES",
     image: "/images/cicatrices-inflammees.png",
     description:
-      "Recent or inflamed scars present fragile and unstable skin. The microblading process could worsen inflammation, delay healing, and create infectious complications.",
-    category: "Healing",
+      "Les cicatrices récentes ou inflammées présentent une peau fragile et instable. Le processus de microblading pourrait aggraver l'inflammation, retarder la cicatrisation et créer des complications infectieuses.",
+    category: "Cicatrisation",
   },
   {
     id: 2,
-    title: "HEAVY MEDICATIONS",
+    title: "TRAITEMENTS LOURDS",
     image: "/images/traitements-medicaux.png",
     description:
-      "Treatments such as chemotherapy, anticoagulants, corticosteroids, and Roaccutane affect the skin's healing capacity and can cause excessive bleeding or unpredictable reactions.",
-    category: "Medications",
+      "Les traitements comme la chimiothérapie, anticoagulants, corticoïdes et Roaccutane affectent la capacité de cicatrisation de la peau et peuvent provoquer des saignements excessifs ou des réactions imprévisibles.",
+    category: "Médications",
   },
   {
     id: 3,
-    title: "DERMATOLOGICAL CONDITIONS",
+    title: "MALADIES DERMATOLOGIQUES",
     image: "/images/deficits-immunitaires.png",
     description:
-      "Conditions like eczema, psoriasis, or dermatitis create a compromised skin barrier. Microblading can trigger inflammatory flare-ups and compromise pigment retention.",
-    category: "Dermatology",
+      "Les conditions comme l'eczéma, le psoriasis ou la dermatite créent une barrière cutanée compromise. Le microblading peut déclencher des poussées inflammatoires et compromettre la rétention du pigment.",
+    category: "Dermatologie",
   },
   {
     id: 4,
-    title: "EYE DISORDERS",
+    title: "TROUBLES OCULAIRES",
     image: "/images/troubles-oculaires.png",
     description:
-      "Eye infections or inflammation in the eyebrow area can spread during microblading. The proximity to the eyes requires perfectly healthy skin to avoid complications.",
-    category: "Ophthalmology",
+      "Les infections oculaires ou inflammations dans la zone des sourcils peuvent se propager lors du microblading. La proximité avec les yeux nécessite une peau parfaitement saine pour éviter les complications.",
+    category: "Ophtalmologie",
   },
   {
     id: 5,
-    title: "DIABETES & HEART DISEASE",
+    title: "DIABÈTE & MALADIES CARDIAQUES",
     image: "/images/diabete-cardiaque.png",
     description:
-      "Diabetes significantly slows healing and increases infection risks. Heart disease can be aggravated by treatment stress and hemorrhagic risks.",
-    category: "Chronic conditions",
+      "Le diabète ralentit considérablement la cicatrisation et augmente les risques d'infection. Les maladies cardiaques peuvent être aggravées par le stress du traitement et les risques hémorragiques.",
+    category: "Pathologies chroniques",
   },
   {
     id: 6,
-    title: "COMPONENT ALLERGIES",
+    title: "ALLERGIES AUX COMPOSANTS",
     image: "/images/allergies-composants.png",
     description:
-      "Allergies to iodine, nickel, latex, or other pigment components can cause severe reactions, significant swelling, and permanent scarring in the treated area.",
+      "Les allergies à l'iode, nickel, latex ou autres composants des pigments peuvent provoquer des réactions graves, des gonflements importants et des cicatrices permanentes dans la zone traitée.",
     category: "Allergies",
   },
   {
     id: 7,
-    title: "IMMUNE DEFICIENCIES",
+    title: "DÉFICITS IMMUNITAIRES",
     image: "/images/maladies-dermatologiques.png",
     description:
-      "A weakened immune system (HIV, transplants, immunosuppressive treatments) cannot effectively fight infections and seriously compromises the healing process.",
-    category: "Immunology",
+      "Un système immunitaire affaibli (VIH, greffes, traitements immunosuppresseurs) ne peut pas lutter efficacement contre les infections et compromet gravement le processus de cicatrisation.",
+    category: "Immunologie",
   },
   {
     id: 8,
-    title: "PREGNANCY & NURSING",
+    title: "GROSSESSE & ALLAITEMENT",
     image: "/images/grossesse-allaitement.webp",
     description:
-      "During pregnancy and nursing, hormonal changes affect healing and pigment retention. Infection risks can also affect the baby's health.",
-    category: "Maternity",
+      "Pendant la grossesse et l'allaitement, les changements hormonaux affectent la cicatrisation et la rétention des pigments. Les risques d'infection peuvent également affecter la santé du bébé.",
+    category: "Maternité",
   },
 ]
 
-function ContraindicationsGrid() {
+export default function ContraindicationsGrid() {
   const [hasInteracted, setHasInteracted] = useState(false)
   const [showHints, setShowHints] = useState(false)
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set())
@@ -171,58 +171,13 @@ function ContraindicationsGrid() {
                     />
                   </svg>
                 </div>
-                <h4 className="text-lg font-bold mb-2">Why is this a contraindication?</h4>
+                <h4 className="text-lg font-bold mb-2">Pourquoi cette contre-indication ?</h4>
               </div>
               <p className="text-sm leading-relaxed text-white text-opacity-90">{item.description}</p>
             </div>
           </div>
         </div>
       ))}
-    </div>
-  )
-}
-
-export default function Home() {
-  return (
-    <div className="min-h-screen pb-12" style={{ backgroundColor: "#E6D9FF" }}>
-      <div className="container mx-auto">
-        {/* Header */}
-        <header className="text-center mb-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
-            Contraindications for Microblading
-          </h1>
-          <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            Microblading is not recommended in the following cases.
-          </p>
-        </header>
-
-        {/* Contraindications Grid */}
-        <ContraindicationsGrid />
-
-        {/* Warning footer */}
-        <div className="mt-12 bg-red-50 border-l-4 border-red-500 p-6 mx-4 rounded-r-lg">
-          <div className="flex items-start">
-            <div className="flex-shrink-0">
-              <svg className="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
-                />
-              </svg>
-            </div>
-            <div className="ml-3">
-              <h3 className="text-lg font-semibold text-red-800 mb-2">Professional Responsibility</h3>
-              <p className="text-red-700">
-                As a professional, it is your responsibility to identify these contraindications during the preliminary
-                consultation. A complete medical questionnaire and visual evaluation are essential for your clients&apos;
-                safety.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }
